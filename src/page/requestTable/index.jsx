@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as S from "./style";
 import dropdownImg from "../../assets/dropdownImg.svg";
+import RequestStatus from "../../components/requestStatus";
 
 const RequestTable = () => {
   const [dropdownArrow, setDropdownArrow] = useState(dropdownImg);
@@ -8,7 +9,7 @@ const RequestTable = () => {
     // {
     //   date: "2024-07-17",
     //   id: "heedda",
-    //   status: "modify",
+    //   status: "inquiry",
     // },
     // {
     //   date: "2024-07-12",
@@ -61,7 +62,7 @@ const RequestTable = () => {
                 <S.CheckBox type="checkbox" onChange={() => {}} />
                 <S.RequestText w="100px">{date}</S.RequestText>
                 <S.RequestText w="50px">{id}</S.RequestText>
-                <S.RequestText w="50px">{status}</S.RequestText>
+                <RequestStatus type={status} />
               </S.CheckLable>
               <S.DeleteButton onClick={() => {}}>삭제</S.DeleteButton>
             </S.RequestElements>

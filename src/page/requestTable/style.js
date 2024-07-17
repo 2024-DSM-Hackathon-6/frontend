@@ -55,8 +55,8 @@ export const DropdownElement = styled.div`
 export const DropdownText = styled.p`
   margin: 0;
   color: "#525252";
-  font-size: ${theme.titleSearchHeading.fontSize};
-  font-weight: ${theme.titleSearchHeading.fontWeight};
+  font-size: 15px;
+  font-weight: 10px;
 `;
 
 export const DropdownImg = styled.img`

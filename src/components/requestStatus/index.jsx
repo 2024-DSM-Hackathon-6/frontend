@@ -9,7 +9,7 @@ const RequestStatus = ({ type }) => {
       case "inquiry":
         setText("문의");
         break;
-      case "mRequest":
+      case "modify":
         setText("수정요청");
         break;
       default:
