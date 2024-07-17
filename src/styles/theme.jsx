@@ -113,5 +113,4 @@ export const theme = {
         fontSize: "16px",
         fontWeight: "normal",
     },
-
 }

@@ -62,13 +62,15 @@ export const WriteInput = styled.input`
   resize: none;
 `;
 
-export const AddWriteButton = styled.button`
-  width: 150px;
+export const WriteButton = styled.button`
+  margin-left: 10px;
   height: 35px;
-  color: ${theme.Main[500]};
+  color: ${(p) => (p.type === "add" ? theme.Main[500] : theme.Red[600])};
   background-color: white;
-  border: 1px solid ${theme.Main[500]};
+  border: 1px solid
+    ${(p) => (p.type === "add" ? theme.Main[500] : theme.Red[600])};
   border-radius: 8px;
+  padding: 4px 20px;
   cursor: pointer;
 `;
 
