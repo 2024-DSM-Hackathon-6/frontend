@@ -25,91 +25,93 @@ export const theme = {
     
     loginHeading: {
         fontSize: "48px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     placeholder: {
         fontSize: "16px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     caption: {
         fontSize: "16px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     searchHeading: {
         fontSize: "18px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     button: {
         fontSize: "18px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     findButton: {
         fontSize: "14px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     searchHeading: {
-        fontSize: "32px",
-        fontWeight: normal,
-    },
-    searchHeading2: {
-        fontSize: "20px",
-        fontWeight: normal,
+        1:{
+            fontSize: "32px",
+            fontWeight: "normal",
+        },
+        2:{
+            fontSize: "20px",
+            fontWeight: "normal",
+        }
     },
     searchPlaceholder: {
         fontSize: "18px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     tileOwner: {
         fontSize: "13px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     tileHeading: {
         fontSize: "20px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     tileP: {
         fontSize: "16px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     titleDay: {
         fontSize: "15px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     menuButton: {
         fontSize: "20px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     writeHeading: {
         fontSize: "20px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     writeButton: {
         fontSize: "14px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     titleSearchHeading: {
         fontSize: "14px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     titleSearchPlaceHolder: {
         fontSize: "13px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     popUpHeading: {
         fontSize: "24px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     popUpPlaceholder: {
         fontSize: "20px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     okButton: {
         fontSize: "20px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
     writeWriting: {
         fontSize: "16px",
-        fontWeight: normal,
+        fontWeight: "normal",
     },
 
 }
