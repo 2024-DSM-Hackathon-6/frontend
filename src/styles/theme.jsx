@@ -1,3 +1,5 @@
+import { WriteHeader } from "../page/writeModify/style";
+
 export const theme = {
     Main: {
         "500": "#5E94F7",
@@ -27,16 +29,8 @@ export const theme = {
         fontSize: "48px",
         fontWeight: "normal",
     },
-    placeholder: {
-        fontSize: "16px",
-        fontWeight: "normal",
-    },
     caption: {
         fontSize: "16px",
-        fontWeight: "normal",
-    },
-    searchHeading: {
-        fontSize: "18px",
         fontWeight: "normal",
     },
     button: {
@@ -77,31 +71,34 @@ export const theme = {
         fontSize: "15px",
         fontWeight: "normal",
     },
-    menuButton: {
+    writeHeading: {
         fontSize: "20px",
         fontWeight: "normal",
     },
-    writeHeading: {
-        fontSize: "20px",
+    WritePlaceholder: {
+        fontSize: "16px",
         fontWeight: "normal",
     },
     writeButton: {
         fontSize: "14px",
         fontWeight: "normal",
     },
-    titleSearchHeading: {
-        fontSize: "14px",
-        fontWeight: "normal",
-    },
-    titleSearchPlaceHolder: {
-        fontSize: "13px",
-        fontWeight: "normal",
+    titleSearch: {
+        1: {
+            fontSize: "14px",
+            fontWeight: "normal",
+        },
+        2: {
+            fontSize: "13px",
+            fontWeight: "normal",
+        },
+        
     },
     popUpHeading: {
         fontSize: "24px",
         fontWeight: "normal",
     },
-    popUpPlaceholder: {
+    popUp: {
         fontSize: "20px",
         fontWeight: "normal",
     },
