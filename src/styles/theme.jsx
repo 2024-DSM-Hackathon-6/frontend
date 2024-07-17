@@ -1,5 +1,3 @@
-import { WriteHeader } from "../page/writeModify/style";
-
 export const theme = {
     Main: {
         "500": "#5E94F7",
@@ -24,24 +22,27 @@ export const theme = {
         "600": "#C72329",
         "500": "#DD3C41",
     },
+    Puple: {
+
+    },
     
-    loginHeading: {
+    LoginHeading: {
         fontSize: "48px",
         fontWeight: "normal",
     },
-    caption: {
+    Caption: {
         fontSize: "16px",
         fontWeight: "normal",
     },
-    button: {
+    Button: {
         fontSize: "18px",
         fontWeight: "normal",
     },
-    findButton: {
+    FindButton: {
         fontSize: "14px",
         fontWeight: "normal",
     },
-    searchHeading: {
+    SearchHeading: {
         1:{
             fontSize: "32px",
             fontWeight: "normal",
@@ -51,27 +52,31 @@ export const theme = {
             fontWeight: "normal",
         }
     },
-    searchPlaceholder: {
+    SearchPlaceholder: {
         fontSize: "18px",
         fontWeight: "normal",
     },
-    tileOwner: {
+    TileOwner: {
         fontSize: "13px",
         fontWeight: "normal",
     },
-    tileHeading: {
+    TileHeading: {
         fontSize: "20px",
         fontWeight: "normal",
     },
-    tileP: {
+    TileP: {
         fontSize: "16px",
         fontWeight: "normal",
     },
-    titleDay: {
+    TileButton: {
+        fontSize: "10px",
+        fontWeight: "normal",
+    },
+    TileDay: {
         fontSize: "15px",
         fontWeight: "normal",
     },
-    writeHeading: {
+    WriteHeading: {
         fontSize: "20px",
         fontWeight: "normal",
     },
@@ -79,11 +84,11 @@ export const theme = {
         fontSize: "16px",
         fontWeight: "normal",
     },
-    writeButton: {
+    WriteButton: {
         fontSize: "14px",
         fontWeight: "normal",
     },
-    titleSearch: {
+    TitleSearch: {
         1: {
             fontSize: "14px",
             fontWeight: "normal",
@@ -94,11 +99,11 @@ export const theme = {
         },
         
     },
-    popUpHeading: {
+    PopUpHeading: {
         fontSize: "24px",
         fontWeight: "normal",
     },
-    popUp: {
+    PopUp: {
         fontSize: "20px",
         fontWeight: "normal",
     },

@@ -38,11 +38,11 @@ const Login = () => {
             onChange={handleText}
           />
         </div>
-        <S.LoginButton type="login" onClick={() => {}}>
+        <S.LoginButton onClick={() => {}}>
           로그인
         </S.LoginButton>
         <S.FindContainer>
-          <S.Find to="/">회원가입</S.Find>&nbsp;|&nbsp;
+          <S.Find to="/signup">회원가입</S.Find>&nbsp;|&nbsp;
           <S.Find to="/">아이디 찾기</S.Find>&nbsp;|&nbsp;
           <S.Find to="/">비밀번호 찾기</S.Find>
         </S.FindContainer>
