@@ -13,10 +13,10 @@ export const LoginContainer = styled.div`
   width: 518px;
   height: 522px;
   border-radius: 12px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 5px 5px 25px 2px gray;
 `;
 
 export const LoginHeading = styled.p`
