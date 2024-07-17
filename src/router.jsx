@@ -14,7 +14,7 @@ export default function Router() {
           <Route path="/management" element={<PostManagement />} />
         </Route>
         <Route path="/login" element={<Login />} />
-        <Routes path="/writePost" element={<WritePost/>}/>
+        <Route path="/writePost" element={<WritePost/>}/>
       </Routes>
     </BrowserRouter>
   );
