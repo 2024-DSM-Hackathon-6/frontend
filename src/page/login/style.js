@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const LoginFlexContainer = styled.div`
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
