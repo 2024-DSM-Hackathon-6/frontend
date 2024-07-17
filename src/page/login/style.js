@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import { Link } from "react-router-dom";
 
 export const LoginFlexContainer = styled.div`
   width: 100vw;
@@ -34,24 +35,22 @@ export const LoginCaption = styled.p`
 `;
 
 export const LoginButton = styled.button`
-  margin-top: ${(props) => (props.type === "login" ? "50px" : "8px")};
+  margin-top: 80px;
   width: 360px;
   height: 52px;
   border-radius: 8px;
-  border: ${(props) =>
-    props.type === "signup" ? `1px solid ${theme.Main[500]}` : "none"};
-  background-color: ${(props) =>
-    props.type === "login" ? theme.Main[500] : "white"};
+  border: none;
+  background-color: ${theme.Main[500]};
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${(props) => (props.type === "login" ? "white" : theme.Main[500])};
+  color: white;
   font-size: 18px;
   font-weight: 10px;
   cursor: pointer;
 `;
 
-export const Find = styled.div`
+export const Find = styled(Link)`
   text-decoration: none;
   color: ${theme.Gray[400]};
   cursor: pointer;

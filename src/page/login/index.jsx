@@ -41,12 +41,10 @@ const Login = () => {
         <S.LoginButton type="login" onClick={() => {}}>
           로그인
         </S.LoginButton>
-        <S.LoginButton type="signup" onClick={() => {}}>
-          회원가입
-        </S.LoginButton>
         <S.FindContainer>
-          <S.Find onClick={() => {}}>아이디 찾기</S.Find>&nbsp;|&nbsp;
-          <S.Find onClick={() => {}}>비밀번호 찾기</S.Find>
+          <S.Find to="/">회원가입</S.Find>&nbsp;|&nbsp;
+          <S.Find to="/">아이디 찾기</S.Find>&nbsp;|&nbsp;
+          <S.Find to="/">비밀번호 찾기</S.Find>
         </S.FindContainer>
       </S.LoginContainer>
     </S.LoginFlexContainer>
