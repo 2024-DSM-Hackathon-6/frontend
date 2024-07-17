@@ -22,9 +22,14 @@ const WriteModify = () => {
           <S.WriteHeader>글 수정하기</S.WriteHeader>
           <S.WriteSubtitle>작성된 글을 수정하세요</S.WriteSubtitle>
         </S.FlexLayoutDiv>
-        <S.AddWriteButton onClick={() => {}}>
-          + 글 다시 추가하기
-        </S.AddWriteButton>
+        <div>
+          <S.WriteButton onClick={() => {}} type="add">
+            + 글 다시 추가하기
+          </S.WriteButton>
+          <S.WriteButton onClick={() => {}} type="delete">
+            글 삭제하기
+          </S.WriteButton>
+        </div>
       </S.WriteHeaderContainer>
       <S.WriteinputContainer>
         <S.WritePair>

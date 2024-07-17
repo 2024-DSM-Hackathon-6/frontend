@@ -107,4 +107,12 @@ export const theme = {
         fontSize: "20px",
         fontWeight: "normal",
     },
+    okButton: {
+        fontSize: "20px",
+        fontWeight: "normal",
+    },
+    writeWriting: {
+        fontSize: "16px",
+        fontWeight: "normal",
+    },
 }
