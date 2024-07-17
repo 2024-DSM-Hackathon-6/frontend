@@ -4,6 +4,7 @@ import PostManagement from "./page/admin/PostManagement";
 import Layout from "./components/Layout";
 import Login from "./page/login";
 import WriteModify from "./page/writeModify";
+import Write from "./page/write";
 
 export default function Router() {
   return (
@@ -14,6 +15,7 @@ export default function Router() {
           <Route path="/management" element={<PostManagement />} />
           <Route path="/login" element={<Login />} />
           <Route path="/writeModify" element={<WriteModify />} />
+          <Route path="/write" element={<Write/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
