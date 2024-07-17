@@ -69,7 +69,7 @@ export const theme = {
         fontWeight: "normal",
     },
     TileButton: {
-        fontSize: "10px",
+        fontSize: "14px",
         fontWeight: "normal",
     },
     TileDay: {

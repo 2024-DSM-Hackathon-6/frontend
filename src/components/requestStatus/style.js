@@ -8,7 +8,9 @@ export const PupleBox = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   background-color: ${props=>props.type==="inquiry"?"#FFF9db":"#F5ECFB"};
   border-radius: 14px;
-  font-size: ${theme.TileButton};
+  font-size: ${theme.TileButton.fontSize};
+  font-weight: ${theme.TileButton.fontWeight};
 `;
