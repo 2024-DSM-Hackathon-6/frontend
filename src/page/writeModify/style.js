@@ -10,7 +10,7 @@ export const WriteHeader = styled.p`
 export const WriteModifyContainer = styled.div`
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

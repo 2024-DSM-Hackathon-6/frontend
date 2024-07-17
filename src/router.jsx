@@ -12,9 +12,9 @@ export default function Router() {
         <Route path="/" element={<Layout />}>
           <Route path="/all" element={<AllPosts />} />
           <Route path="/management" element={<PostManagement />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/writeModify" element={<WriteModify />} />
         </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/writeModify" element={<WriteModify/>}/>
       </Routes>
     </BrowserRouter>
   );
