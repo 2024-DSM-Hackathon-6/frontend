@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as S from "./style";
 import RequestStatus from "../../components/requestStatus";
-import { statusSearch } from "../../api/statusSearch";
+import { deleteStatus, statusSearch } from "../../api/statusSearch";
 
 const RequestTable = () => {
   const [requestArray, setRequestArray] = useState([]);
@@ -13,6 +13,14 @@ const RequestTable = () => {
       console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
+    }
+  };
+
+  const deleteStatusData = async (id) => {
+    try {
+      await deleteStatus(1);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -38,7 +46,7 @@ const RequestTable = () => {
                     <S.RequestText w="50px">{userName}</S.RequestText>
                     <RequestStatus type={name} />
                   </S.CheckLable>
-                  <S.DeleteButton onClick={() => {}}>삭제</S.DeleteButton>
+                  <S.DeleteButton onClick={deleteStatusData}>삭제</S.DeleteButton>
                 </S.RequestElements>
               );
             })}
