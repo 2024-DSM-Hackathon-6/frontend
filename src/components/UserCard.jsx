@@ -28,7 +28,9 @@ export default function InfoCard({ id, userName, title, content, createDate }) {
 }
 
 const Box = styled.div`
-   width: 300px;
+ box-sizing: border-box;
+   width: 332px;
+   height: 163px;
    padding: 13px 15px;
    border: 1px solid #D9D9D9;
    border-radius: 4px;
