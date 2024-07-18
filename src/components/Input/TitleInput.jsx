@@ -1,11 +1,21 @@
 import styled from "styled-components";
+import React, { useState, useEffect } from "react";
 import { ReactComponent as SearchIcon } from "../../assets/Icon/searchIcon.svg"
 
+export default function TitleInput( props ) {
+   const [text, setText] = useState();
 
-export default function TitleInput() {
+   useEffect(() => {
+      props.onGetInText(text);
+    }, [text]);
+
+    const getData = (e) => {
+      setText(e.target.value);
+    }
+
    return (
       <Box>
-         <Input placeholder="글 제목 검색하기"/>
+         <Input type="text" placeholder="글 제목 검색하기" onChange={getData} />
          <SearchIcon/>
       </Box>
    )

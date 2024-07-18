@@ -6,20 +6,21 @@ const RequestStatus = ({ type }) => {
 
   useEffect(() => {
     switch (type) {
-      case "문의":
+      case "INQUIRY":
         setText("문의");
         break;
-      case "수정 요청":
+      case "FIX":
         setText("수정 요청");
         break;
       default:
         break;
     }
   }, [type]);
+  console.log(type)
 
   return (
     <>
-      <S.PupleBox type={type}>{text}</S.PupleBox>
+      <S.PupleBox type={type}>{type}</S.PupleBox>
     </>
   );
 };
