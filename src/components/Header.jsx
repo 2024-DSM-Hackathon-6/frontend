@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { theme } from "../styles/theme";
+import { ReactComponent as Logo } from "../assets/Icon/Logo.svg"
 
 export default function Header() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export default function Header() {
     <>
       <Container>
         <LeftItemWrap>
-          <TestLogo>테스트 로고임</TestLogo>
+          <Logo/>
           {Data.map((item, index) => (
             <HandleText key={index} onClick={() => handleNavigation(index)}>
               {item}

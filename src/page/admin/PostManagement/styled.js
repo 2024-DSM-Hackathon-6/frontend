@@ -1,21 +1,23 @@
 import styled from "styled-components";
-// import { theme } from "../../../styles/theme";
+import { theme } from "../../../styles/theme";
 
+export const Contain = styled.div`
+   display: flex;
+   justify-content: center;
+`
 
 export const Container = styled.div`
-   /* background-color: red; */
+   width: 68%;
    height: 100%;
    font-family: "Pretendard-Medium";
    padding: 50px 0;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
 `
 
 export const Box = styled.div`
    display: flex;
    flex-direction: column;
    gap: 25px;
+   
 `
 
 export const TitleFlex = styled.div`
@@ -34,9 +36,19 @@ export const SubTitle = styled.p`
 `
 
 export const CardFlex = styled.div`
-   /* background-color: red; */
-   width: 1029px;
+   width: 100%;
    display: flex;
    flex-wrap: wrap;
-   gap: 22px 15px;
+   gap: 22px 16px;
+`
+
+export const Bar = styled.div`
+   box-sizing: border-box;
+   width: 100%;
+   color: white;
+   border-radius: 5px;
+   background-color: ${theme.Main[500]};
+   font-size: 15px;
+   padding: 8px 20px;
+   font-family: "Pretendard-Regular";
 `

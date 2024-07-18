@@ -7,6 +7,7 @@ import WriteModify from "./page/writeModify";
 import Write from "./page/write";
 import RequestTable from "./page/requestTable";
 import Signup from "./page/signup";
+import ViewDetails from "./page/admin/ViewDetails";
 
 export default function Router() {
   return (
@@ -18,6 +19,7 @@ export default function Router() {
           <Route path="/writeModify" element={<WriteModify />} />
           <Route path="/write" element={<Write />} />
           <Route path="/requestTable" element={<RequestTable />} />
+          <Route path="/post/:id" element={<ViewDetails />} />
         </Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

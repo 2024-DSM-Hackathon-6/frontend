@@ -1,151 +1,66 @@
-import * as S from "../AllPosts/styled"
-import TitleInput from "../../../components/Input/TitleInput"
-import UserCard from "../../../components/UserCard"
+import React, { useState, useEffect } from "react";
+import * as S from "../AllPosts/styled";
+import TitleInput from "../../../components/Input/TitleInput";
+import UserCard from "../../../components/UserCard";
+import { Link } from 'react-router-dom';
+import axios from "axios";
 
 export default function AllPosts() {
+   const [data, setData] = useState([]);
+   const [value, setValue] = useState("");
 
-   const data = [
-      {
-         user: '이정호',
-         title: '자취 팁 알려드림!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '최하은',
-         title: '빨래 개는 팁 알려드리것음!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '김희찬',
-         title: '쌤 몰ㄹ래 게임하는 팁 알려드림! 진짜 이거 한 번도 안 걸렸음.',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '홍서은',
-         title: '책 이쁘게 정리하는 법 알려드림!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '이정호',
-         title: '자취 팁 알려드림!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '최하은',
-         title: '빨래 개는 팁 알려드리것음!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '김희찬',
-         title: '쌤 몰ㄹ래 게임하는 팁 알려드림! 진짜 이거 한 번도 안 걸렸음.',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '홍서은',
-         title: '책 이쁘게 정리하는 법 알려드림!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '이정호',
-         title: '자취 팁 알려드림!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '최하은',
-         title: '빨래 개는 팁 알려드리것음!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '김희찬',
-         title: '쌤 몰ㄹ래 게임하는 팁 알려드림! 진짜 이거 한 번도 안 걸렸음.',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '홍서은',
-         title: '책 이쁘게 정리하는 법 알려드림!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '이정호',
-         title: '자취 팁 알려드림!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '최하은',
-         title: '빨래 개는 팁 알려드리것음!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '김희찬',
-         title: '쌤 몰ㄹ래 게임하는 팁 알려드림! 진짜 이거 한 번도 안 걸렸음.',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      },
-      {
-         user: '홍서은',
-         title: '책 이쁘게 정리하는 법 알려드림!',
-         text: '1. 화장실 실리콘에 핀 곰팡이는 락스에 적신 키친타월을 붙였다 하루 지난 후 물로 헹구면 말끔 깨끗해짐 2. 가죽 닦을 때 수건에 바세린을 어쩌고 저쩌고',
-         date: '2024-07-16'
-
-      }
-   ];
-
-
+   useEffect(() => {
+      //console.log(value);
+      axios.get(`https://prod-server.xquare.app/jeong/feeds/search?title=${value}`, {
+         headers: {
+            'X-identifier': 'qjz3ht5tdo'
+         }
+      })
+      .then(response => {
+         const fetchedData = response.data.feedElements.map(item => ({
+            id: item.id,
+            userName: item.userName,
+            title: item.title,
+            content: item.content,
+            createDate: item.createDate
+         }));
+         setData(fetchedData);
+      })
+      .catch(error => {
+         console.error("에러 메세지", error);
+      });
+   }, [value]);
 
    return (
       <>
-         <S.Container>
-            <S.Box>
-               <S.TitleFlex>
-                  <S.Title>전체 글 확인</S.Title>
-                  <S.SubTitle>작성된 모든 글을 조회하세요</S.SubTitle>
-               </S.TitleFlex>
+         <S.Contain>
+            <S.Container>
+               <S.Box>
+                  <S.TitleFlex>
+                     <S.Title>전체 글 확인</S.Title>
+                     <S.SubTitle>작성된 모든 글을 조회하세요</S.SubTitle>
+                  </S.TitleFlex>
 
-               <TitleInput />
+                  <TitleInput 
+                     onGetInText={(text) => setValue(text)}
+                  />
 
-               <S.CardFlex>
-                  {data.map(({ user, title, text, date }, index) => (
-                     <UserCard
-                        key={index}
-                        user={user}
-                        title={title}
-                        text={text}
-                        date={date}
-                     />
-                  ))}
-               </S.CardFlex>
-            </S.Box>
-         </S.Container>
+                  <S.CardFlex>
+                     {data.map(({ id, userName, title, content, createDate }) => (
+                        <Link to={`/post/${id}`} key={id}>
+                           <UserCard
+                              id={id}
+                              userName={userName}
+                              title={title}
+                              content={content}
+                              createDate={createDate}
+                           />
+                        </Link>
+                     ))}
+                  </S.CardFlex>
+               </S.Box>
+            </S.Container>
+         </S.Contain>
       </>
-   )
+   );
 }
-
