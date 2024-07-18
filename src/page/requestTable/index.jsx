@@ -1,73 +1,48 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from "./style";
-import dropdownImg from "../../assets/dropdownImg.svg";
 import RequestStatus from "../../components/requestStatus";
+import { statusSearch } from "../../api/statusSearch";
 
 const RequestTable = () => {
-  const [dropdownArrow, setDropdownArrow] = useState(dropdownImg);
-  const [requestArray, setRequestArray] = useState([
-    // {
-    //   date: "2024-07-17",
-    //   id: "heedda",
-    //   status: "inquiry",
-    // },
-    // {
-    //   date: "2024-07-12",
-    //   id: "whf",
-    //   status: "modify",
-    // },
-    // {
-    //   date: "2024-07-14",
-    //   id: "dfsdf",
-    //   status: "modify",
-    // },
-  ]);
-  const [dropdownStatus, setDropdownStatus] = useState(false);
-  const [dropdownTitle, setDropdownTitle] = useState("전체");
-  const handleDropdownStatus = () => {
-    setDropdownStatus(!dropdownStatus);
+  const [requestArray, setRequestArray] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const data = await statusSearch(1, "");
+      setRequestArray(data);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
-  const handleDropdownTitle = (title) => {
-    setDropdownTitle(title);
-  };
+
+  useEffect(() => fetchData, []);
 
   return (
     <S.RTContainer>
       <S.TableContainer>
-        <S.Dropdown onClick={handleDropdownStatus}>
-          <S.DropdownText>{dropdownTitle}</S.DropdownText>
-          <S.DropdownImg src={dropdownArrow} alt="" />
-        </S.Dropdown>
-        <S.DropdownElementContainer status={dropdownStatus}>
-          <S.DropdownElement onClick={() => handleDropdownTitle("전체")}>
-            전체
-          </S.DropdownElement>
-          <S.DropdownElement onClick={() => handleDropdownTitle("문의")}>
-            문의
-          </S.DropdownElement>
-          <S.DropdownElement onClick={() => handleDropdownTitle("수정요청")}>
-            수정요청
-          </S.DropdownElement>
-        </S.DropdownElementContainer>
         <S.StandardBar>
           <p>날짜</p>
           <p>아이디</p>
           <p>상태</p>
         </S.StandardBar>
-        {requestArray.map((request) => {
-          const { date, id, status } = request;
-          return (
-            <S.RequestElements>
-              <S.CheckLable>
-                <S.CheckBox type="checkbox" onChange={() => {}} />
-                <S.RequestText w="100px">{date}</S.RequestText>
-                <S.RequestText w="50px">{id}</S.RequestText>
-                <RequestStatus type={status} />
-              </S.CheckLable>
-              <S.DeleteButton onClick={() => {}}>삭제</S.DeleteButton>
-            </S.RequestElements>
-          );
-        })}
+        <>
+          {requestArray &&
+            requestArray.map((request) => {
+              const { createDate, userName, name, id } = request;
+              return (
+                <S.RequestElements key={id}>
+                  <S.CheckLable>
+                    <S.CheckBox type="checkbox" onChange={() => {}} />
+                    <S.RequestText w="110px">{createDate}</S.RequestText>
+                    <S.RequestText w="50px">{userName}</S.RequestText>
+                    <RequestStatus type={name} />
+                  </S.CheckLable>
+                  <S.DeleteButton onClick={() => {}}>삭제</S.DeleteButton>
+                </S.RequestElements>
+              );
+            })}
+        </>
       </S.TableContainer>
     </S.RTContainer>
   );

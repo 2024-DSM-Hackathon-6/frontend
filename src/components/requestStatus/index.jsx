@@ -6,11 +6,11 @@ const RequestStatus = ({ type }) => {
 
   useEffect(() => {
     switch (type) {
-      case "inquiry":
+      case "문의":
         setText("문의");
         break;
-      case "modify":
-        setText("수정요청");
+      case "수정 요청":
+        setText("수정 요청");
         break;
       default:
         break;

@@ -1,3 +1,4 @@
+import { login } from "../../api/login";
 import * as S from "./style";
 import { useState } from "react";
 
@@ -14,6 +15,10 @@ const Login = () => {
       ...text,
       [name]: value,
     });
+  };
+
+  const loginPost = () => {
+    login(text);
   };
 
   return (
@@ -38,9 +43,7 @@ const Login = () => {
             onChange={handleText}
           />
         </div>
-        <S.LoginButton onClick={() => {}}>
-          로그인
-        </S.LoginButton>
+        <S.LoginButton onClick={loginPost}>로그인</S.LoginButton>
         <S.FindContainer>
           <S.Find to="/signup">회원가입</S.Find>&nbsp;|&nbsp;
           <S.Find to="/">아이디 찾기</S.Find>&nbsp;|&nbsp;

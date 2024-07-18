@@ -10,61 +10,6 @@ export const RTContainer = styled.div`
   justify-content: center;
 `;
 
-export const Dropdown = styled.div`
-  width: 180px;
-  height: 40px;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid ${theme.Gray[500]};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 21px;
-  color: ${theme.Gray[700]};
-  margin-bottom: 30px;
-  box-sizing: border-box;
-  cursor: pointer;
-`;
-
-export const DropdownElementContainer = styled.div`
-  margin-top: 45px;
-  width: 180px;
-  background-color: white;
-  border: 1px solid ${theme.Gray[500]};
-  border-radius: 8px;
-  position: absolute;
-  box-sizing: border-box;
-  display: ${(props) => (props.status ? "block" : "none")};
-`;
-
-export const DropdownElement = styled.div`
-  width: 100%;
-  height: 48px;
-  padding: 15px 12px;
-  box-sizing: border-box;
-  color: "#424242";
-  display: inherit;
-  border-radius: 8px;
-  cursor: pointer;
-  &:hover {
-    border-top: 1px solid ${theme.Gray[500]};
-    border-bottom: 1px solid ${theme.Gray[500]};
-  }
-`;
-
-export const DropdownText = styled.p`
-  margin: 0;
-  color: "#525252";
-  font-size: 15px;
-  font-weight: 10px;
-`;
-
-export const DropdownImg = styled.img`
-  margin: 0;
-  width: 15px;
-  height: 15px;
-`;
-
 export const TableContainer = styled.div`
   width: 900px;
   height: 100%;
@@ -86,6 +31,7 @@ export const StandardBar = styled.div`
   color: white;
   box-sizing: border-box;
   margin-bottom: 18px;
+  margin-top: 50px;
 `;
 
 export const RequestElements = styled.div`

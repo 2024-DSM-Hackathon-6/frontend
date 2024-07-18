@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import { signup } from "../../api/signup";
 import * as S from "./style";
 import { useState } from "react";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [text, setText] = useState({
     id: "",
     password: "",
@@ -15,7 +18,11 @@ const Signup = () => {
       [name]: value,
     });
   };
-  
+
+  const signupPost = () => {
+    signup(text);
+  };
+
   return (
     <>
       <S.SignUpFlexContainer>
@@ -39,16 +46,14 @@ const Signup = () => {
               onChange={handleText}
             />
           </div>
-          <S.SignUpButton onClick={() => { }}>
-            회원가입
-          </S.SignUpButton>
+          <S.SignUpButton onClick={signupPost}>회원가입</S.SignUpButton>
           <S.FindContainer>
-            <S.Find to="/login">로그인 하러가기{'→'}</S.Find>
+            <S.Find to="/login">로그인 하러가기{"→"}</S.Find>
           </S.FindContainer>
         </S.SignUpContainer>
       </S.SignUpFlexContainer>
     </>
-  )
-}
+  );
+};
 
 export default Signup;
