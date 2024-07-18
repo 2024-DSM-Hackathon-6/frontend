@@ -2,11 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 import ContextMenuBtn from "../components/Button/ContextMenuBtn";
-import RequestStatus from "./requestStatus";
+import RequestStatus from "../components/requestStatus"
+import axios from "axios";
 
-export default function InfoCard({ title, content, createDate, type }) {
-   
+export default function InfoCard({ id, title, content, createDate, type, onDelete }) {
    const uniqueTypes = [...new Set(type)];
+
+   const handleDeleteCard = async () => {
+      console.log(id);
+      try {
+         await axios.delete(`https://prod-server.xquare.app/jeong/infos/${id}`, {
+            headers: {
+               "X-identifier": "qjz3ht5tdo"
+            }
+         });
+         onDelete(id);
+         
+      } catch (error) {
+         console.error("Error", error);
+      }
+   };
 
    return (
       <>
@@ -14,7 +29,7 @@ export default function InfoCard({ title, content, createDate, type }) {
             <Flex>
                <TitleFlex>
                   <Title>{title}</Title>
-                  <ContextMenuBtn />
+                  <ContextMenuBtn onDelete={handleDeleteCard} />
                </TitleFlex>
                <Text>{content}</Text>
             </Flex>
